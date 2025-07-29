@@ -1,6 +1,5 @@
 {
-"dog": 
-  [
+"dog": [
     {
       "name": "Advocate",
       "ingredient": "imidacloprid + moxidectin",
@@ -18,7 +17,7 @@
       "dose": "1 tablet"
     },
     {
-      "name": "Bravecto",
+      "name": "Bravectol",
       "ingredient": "fluralaner",
       "form": "chewable tablet",
       "minWeight": 2,
