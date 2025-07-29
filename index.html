@@ -61,6 +61,114 @@
     <textarea id="clinicalNote" rows="5" readonly></textarea>
     <button onclick="copyNote()">Copy to Clipboard</button>
 
+<script>
+// --- 1. Load Product Data & Initialize ---
+let productsData = {};
+
+fetch('products.json')
+  .then(response => response.json())
+  .then(data => {
+    productsData = data;
+    console.log("Products loaded!");
+  })
+  .catch(error => console.error("Error loading products:", error));
+
+// --- 2. Update Brands Dropdown (Weight Filter) ---
+function updateBrands() {
+  const animal = document.querySelector('input[name="animal"]:checked')?.value;
+  const weight = parseFloat(document.getElementById('weight').value);
+  const brandSelect = document.getElementById('brand');
+
+  if (!animal || isNaN(weight)) {
+    // Reset if no valid input
+    brandSelect.innerHTML = '<option value="">-- Select Brand --</option>';
+    return;
+  }
+
+  // Filter products by weight
+  const eligibleProducts = productsData[animal]?.filter(
+    product => weight >= product.minWeight && weight <= product.maxWeight
+  ) || [];
+
+  // Update dropdown
+  brandSelect.innerHTML = '<option value="">-- Select Brand --</option>';
+  
+  if (eligibleProducts.length === 0) {
+    brandSelect.innerHTML = '<option value="">No products found for this weight</option>';
+  } else {
+    eligibleProducts.forEach(product => {
+      const option = document.createElement('option');
+      option.value = product.name;
+      option.textContent = `${product.name} (${product.ingredient}) - ${product.form}, ${product.dose}`;
+      brandSelect.appendChild(option);
+    });
+  }
+}
+
+// --- 3. Auto-Fill Frequency ---
+function autoFillDetails() {
+  const animal = document.querySelector('input[name="animal"]:checked')?.value;
+  const brandName = document.getElementById('brand').value;
+  
+  if (!animal || !brandName) return;
+
+  const product = productsData[animal]?.find(p => p.name === brandName);
+  if (!product) return;
+
+  // Auto-set frequency only (form is now part of product data)
+  const frequency = product.dose.match(/(monthly|every \d+ months)/)?.[0];
+  if (frequency) document.getElementById('frequency').value = frequency;
+}
+
+// --- 4. Event Listeners ---
+document.getElementById('weight').addEventListener('input', updateBrands);
+document.querySelectorAll('input[name="animal"]').forEach(radio => {
+  radio.addEventListener('change', updateBrands);
+});
+document.getElementById('brand').addEventListener('change', autoFillDetails);
+
+// --- 5. Generate the Final Clinical Note ---
+function generateNote() {
+  const animal = document.querySelector('input[name="animal"]:checked')?.value;
+  const weight = document.getElementById('weight').value;
+  const brand = document.getElementById('brand').value;
+  const frequency = document.getElementById('frequency').value;
+
+  // Validate inputs
+  if (!animal || !weight || !brand || !frequency) {
+    alert("Please fill all fields!");
+    return;
+  }
+
+  // Find the selected product
+  const product = productsData[animal]?.find(p => p.name === brand);
+  if (!product) {
+    alert("Error: Product not found. Please reselect.");
+    return;
+  }
+
+  // Get today's date in dd/mm/yyyy format
+  const today = new Date();
+  const day = String(today.getDate()).padStart(2, '0');
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const year = today.getFullYear();
+  const todayFormatted = `${day}/${month}/${year}`;
+
+  // Generate the note using product.form instead of separate form field
+  const note = `I prescribe ${brand} (${product.ingredient}) ${product.form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
+  document.getElementById('clinicalNote').value = note;
+}
+
+// --- 6. Copy to Clipboard ---
+function copyNote() {
+  const note = document.getElementById('clinicalNote');
+  note.select();
+  document.execCommand('copy');
+  alert("Copied to clipboard!");
+}
+
+</script>
+  <!--
     <script>
 // --- 1. Load Product Data & Initialize ---
 let productsData = {};
