@@ -126,6 +126,39 @@ document.querySelectorAll('input[name="animal"]').forEach(radio => {
 });
 document.getElementById('brand').addEventListener('change', autoFillDetails);
 
+        // --- 5. Generate the Final Clinical Note ---
+function generateNote() {
+  const animal = document.querySelector('input[name="animal"]:checked')?.value;
+  const weight = document.getElementById('weight').value;
+  const brand = document.getElementById('brand').value;
+  const form = document.getElementById('form').value;
+  const frequency = document.getElementById('frequency').value;
+
+  // Validate inputs
+  if (!animal || !weight || !brand || !form || !frequency) {
+    alert("Please fill all fields!");
+    return;
+  }
+
+  // Find the selected product
+  const product = productsData[animal]?.find(p => p.name === brand);
+  if (!product) {
+    alert("Error: Product not found. Please reselect.");
+    return;
+  }
+
+  // Generate the note
+  const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months.`;
+  document.getElementById('clinicalNote').value = note;
+}
+
+// --- 6. Copy to Clipboard ---
+function copyNote() {
+  const note = document.getElementById('clinicalNote');
+  note.select();
+  document.execCommand('copy');
+  alert("Copied to clipboard!");
+}
     </script>
         
 
