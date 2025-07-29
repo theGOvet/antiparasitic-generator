@@ -29,13 +29,13 @@
         <label>Max Weight (kg):</label>
         <input type="number" name="maxWeight" step="0.1" required><br>
 
-        <label>Dose Instructions:</label>
-        <input type="text" name="dose" placeholder="e.g., 1 pipette monthly" required><br>
+        <label>Dose Instructions (number and form) :</label>
+        <input type="text" name="dose" placeholder="e.g., 1 pipette or 2 tablets" required><br>
 
-        <label>Animals:</label>
+  <!--     <label>Animals:</label>
         <input type="checkbox" name="animals" value="dog"> Dog
         <input type="checkbox" name="animals" value="cat"> Cat<br>
-
+-->
         <button type="button" onclick="generateSnippet()">Generate Snippet</button>
     </form>
 
@@ -46,9 +46,10 @@
     <script>
         function generateSnippet() {
             const form = document.getElementById('snippetForm');
-            const animals = [...form.elements.animals]
-                .filter(cb => cb.checked)
-                .map(cb => cb.value);
+            
+          //  const animals = [...form.elements.animals]
+           //     .filter(cb => cb.checked)
+             //   .map(cb => cb.value);
 
             const snippet = {
                 name: form.elements.name.value,
@@ -57,7 +58,6 @@
                 minWeight: parseFloat(form.elements.minWeight.value),
                 maxWeight: parseFloat(form.elements.maxWeight.value),
                 dose: form.elements.dose.value,
-                animals: animals
             };
 
             document.getElementById('snippetOutput').value = JSON.stringify(snippet, null, 2);
