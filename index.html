@@ -148,19 +148,19 @@ function generateNote() {
   }
 
       // Get today's date in dd/mm/yyyy format
-  const today = new Date();
-  const day = String(today.getDate()).padStart(2, '0');
-  const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
-  const year = today.getFullYear();
-  const todayFormatted = `${day}/${month}/${year}`;
+  //const today = new Date();
+  //const day = String(today.getDate()).padStart(2, '0');
+  //const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+  //const year = today.getFullYear();
+  //const todayFormatted = `${day}/${month}/${year}`;
 
   // Generate the note with date
-  const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
-  document.getElementById('clinicalNote').value = note;
+  //const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
+  //document.getElementById('clinicalNote').value = note;
 
   //  Generate the note (old one but working - no date)
-  //  const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months.`;
-  //  document.getElementById('clinicalNote').value = note;
+    const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months.`;
+    document.getElementById('clinicalNote').value = note;
 }
 
 // --- 6. Copy to Clipboard ---
