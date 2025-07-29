@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Vet Antiparasitic Prescription Generator | FrangoMezVet</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        textarea { width: 100%; margin-top: 10px; }
+        .brand-info { font-size: 0.9em; color: #666; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>UK Vet Antiparasitic Prescription Generator</h1>
+    <p>Generate POM-V clinical notes in seconds. Compliant with UK prescribing rules.</p>
+    
+    <form id="prescriptionForm">
+        <label><strong>Animal:</strong></label><br>
+        <input type="radio" id="cat" name="animal" value="cat" required>
+        <label for="cat">Cat</label>
+        <input type="radio" id="dog" name="animal" value="dog">
+        <label for="dog">Dog</label><br><br>
+        
+        <label for="weight"><strong>Weight (kg):</strong></label><br>
+        <input type="number" id="weight" name="weight" step="0.1" min="0.1" required><br><br>
+        
+        <label for="brand"><strong>Brand:</strong></label><br>
+        <select id="brand" name="brand" required>
+            <option value="">-- Select Brand --</option>
+            <option value="Advocate">Advocate (imidacloprid + moxidectin)</option>
+            <option value="Bravecto">Bravecto (fluralaner)</option>
+            <option value="NexGard">NexGard (afoxolaner)</option>
+            <option value="Milbemax">Milbemax (milbemycin oxime + praziquantel)</option>
+        </select><br>
+        <div class="brand-info" id="brandInfo"></div><br>
+        
+        <label for="form"><strong>Form:</strong></label><br>
+        <select id="form" name="form" required>
+            <option value="">-- Select Form --</option>
+            <option value="spot-on">Spot-on</option>
+            <option value="tablet">Tablet</option>
+            <option value="chew">Chew</option>
+        </select><br><br>
+        
+        <label for="frequency"><strong>Frequency:</strong></label><br>
+        <select id="frequency" name="frequency" required>
+            <option value="">-- Select Frequency --</option>
+            <option value="monthly">Monthly</option>
+            <option value="every 3 months">Every 3 months</option>
+            <option value="every 6 months">Every 6 months (e.g., Bravecto)</option>
+        </select><br><br>
+        
+        <button type="button" onclick="generateNote()">Generate Clinical Note</button>
+    </form>
+    
+    <h3>Clinical Note:</h3>
+    <textarea id="clinicalNote" rows="5" readonly></textarea>
+    <button onclick="copyNote()">Copy to Clipboard</button>
+    
+    <script>
+        // Update brand info when selected
+        document.getElementById('brand').addEventListener('change', function() {
+            const brandInfo = {
+                "Advocate": "For fleas, ticks, worms (imidacloprid + moxidectin).",
+                "Bravecto": "Long-lasting flea & tick (fluralaner). Lasts 3 months.",
+                "NexGard": "Flea & tick chew (afoxolaner). Monthly use.",
+                "Milbemax": "Deworming tablet (milbemycin + praziquantel)."
+            };
+            document.getElementById('brandInfo').textContent = brandInfo[this.value] || "";
+        });
+        
+        function generateNote() {
+            const animal = document.querySelector('input[name="animal"]:checked')?.value;
+            const weight = document.getElementById('weight').value;
+            const brand = document.getElementById('brand').value;
+            const form = document.getElementById('form').value;
+            const frequency = document.getElementById('frequency').value;
+            
+            if (!animal || !weight || !brand || !form || !frequency) {
+                alert("Please fill all fields!");
+                return;
+            }
+            
+            // Brand-to-ingredient mapping
+            const ingredients = {
+                "Advocate": "imidacloprid + moxidectin",
+                "Bravecto": "fluralaner",
+                "NexGard": "afoxolaner",
+                "Milbemax": "milbemycin oxime + praziquantel"
+            };
+            
+            const ingredient = ingredients[brand];
+            let note = `I prescribe ${brand} (${ingredient}) ${form} for ${animal} (${weight} kg), `;
+            
+            if (form === "spot-on") {
+                note += `1 pipette ${frequency} for the next 12 months.`;
+            } else if (form === "tablet" || form === "chew") {
+                note += `1 ${form} ${frequency} for the next 12 months.`;
+            }
+            
+            document.getElementById('clinicalNote').value = note;
+        }
+        
+        function copyNote() {
+            const note = document.getElementById('clinicalNote');
+            note.select();
+            document.execCommand('copy');
+            alert("Copied to clipboard!");
+        }
+    </script>
+    
+    <!-- Affiliate/CTA Section -->
+    <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 15px;">
+        <p><strong>More vet tools:</strong> Visit <a href="https://frangomezvet.com" target="_blank">frangomezvet.com</a> for clinical calculators and resources.</p>
+    </div>
+</body>
+</html>
