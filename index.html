@@ -158,8 +158,10 @@ function generateNote() {
 
   // Generate the note with date
   //const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
-  const note = `I prescribe ${brand} (${product.ingredient}) for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
-  document.getElementById('clinicalNote').value = note;
+  // not working const note = `I prescribe ${brand} (${product.ingredient}) for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
+  // In generateNote() - remove form variable and modify note:
+     const note = `I prescribe ${brand} (${product.ingredient}) ${product.form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
+     document.getElementById('clinicalNote').value = note;
 
   //  Generate the note (old one but working - no date)
   //  const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months.`;
