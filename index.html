@@ -158,9 +158,9 @@ function generateNote() {
   const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
   document.getElementById('clinicalNote').value = note;
 
-  // Generate the note
-  const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months.`;
-  document.getElementById('clinicalNote').value = note;
+  //  Generate the note (old one but working - no date)
+  //  const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months.`;
+  //  document.getElementById('clinicalNote').value = note;
 }
 
 // --- 6. Copy to Clipboard ---
