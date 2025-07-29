@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Snippet Generator</title>
+    <style>
+        body { font-family: Arial, max-width: 600px, margin: 0 auto; padding: 20px; }
+        textarea { width: 100%; height: 150px; }
+    </style>
+</head>
+<body>
+    <h1>JSON Snippet Generator</h1>
+    <form id="snippetForm">
+        <label>Product Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Active Ingredient:</label>
+        <input type="text" name="ingredient" required><br>
+
+        <label>Form:</label>
+        <select name="form" required>
+            <option value="spot-on">Spot-on</option>
+            <option value="tablet">Tablet</option>
+            <option value="chew">Chew</option>
+        </select><br>
+
+        <label>Min Weight (kg):</label>
+        <input type="number" name="minWeight" step="0.1" required><br>
+
+        <label>Max Weight (kg):</label>
+        <input type="number" name="maxWeight" step="0.1" required><br>
+
+        <label>Dose Instructions:</label>
+        <input type="text" name="dose" placeholder="e.g., 1 pipette monthly" required><br>
+
+        <label>Animals:</label>
+        <input type="checkbox" name="animals" value="dog"> Dog
+        <input type="checkbox" name="animals" value="cat"> Cat<br>
+
+        <button type="button" onclick="generateSnippet()">Generate Snippet</button>
+    </form>
+
+    <h3>Copy this into products.json:</h3>
+    <textarea id="snippetOutput" readonly></textarea>
+    <button onclick="copySnippet()">Copy to Clipboard</button>
+
+    <script>
+        function generateSnippet() {
+            const form = document.getElementById('snippetForm');
+            const animals = [...form.elements.animals]
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+
+            const snippet = {
+                name: form.elements.name.value,
+                ingredient: form.elements.ingredient.value,
+                form: form.elements.form.value,
+                minWeight: parseFloat(form.elements.minWeight.value),
+                maxWeight: parseFloat(form.elements.maxWeight.value),
+                dose: form.elements.dose.value,
+                animals: animals
+            };
+
+            document.getElementById('snippetOutput').value = JSON.stringify(snippet, null, 2);
+        }
+
+        function copySnippet() {
+            const snippet = document.getElementById('snippetOutput');
+            snippet.select();
+            document.execCommand('copy');
+            alert("Copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
