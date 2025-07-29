@@ -1,0 +1,38 @@
+{
+  "dog": [
+    {
+      "name": "Advocate",
+      "ingredient": "imidacloprid + moxidectin",
+      "form": "spot-on",
+      "minWeight": 4,
+      "maxWeight": 10,
+      "dose": "1 pipette monthly"
+    },
+    {
+      "name": "Simparica Trio",
+      "ingredient": "sarolaner + moxidectin + pyrantel",
+      "form": "chewable tablet",
+      "minWeight": 1.3,
+      "maxWeight": 2.5,
+      "dose": "1 tablet monthly"
+    },
+    {
+      "name": "Bravecto",
+      "ingredient": "fluralaner",
+      "form": "chewable tablet",
+      "minWeight": 2,
+      "maxWeight": 4.5,
+      "dose": "1 tablet every 3 months"
+    }
+  ],
+  "cat": [
+    {
+      "name": "Advocate",
+      "ingredient": "imidacloprid + moxidectin",
+      "form": "spot-on",
+      "minWeight": 1,
+      "maxWeight": 4,
+      "dose": "1 pipette monthly"
+    }
+  ]
+}
