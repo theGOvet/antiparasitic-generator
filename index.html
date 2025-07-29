@@ -35,7 +35,7 @@
             <option value="Milbemax">Milbemax (milbemycin oxime + praziquantel)</option>
         </select><br>
         <div class="brand-info" id="brandInfo"></div><br>
-        
+      <!-- Form is redundant as part of the product 
         <label for="form"><strong>Form:</strong></label><br>
         <select id="form" name="form" required>
             <option value="">-- Select Form --</option>
@@ -43,7 +43,9 @@
             <option value="tablet">Tablet</option>
             <option value="chew">Chew</option>
         </select><br><br>
-        
+       -->
+
+
         <label for="frequency"><strong>Frequency:</strong></label><br>
         <select id="frequency" name="frequency" required>
             <option value="">-- Select Frequency --</option>
@@ -155,7 +157,8 @@ function generateNote() {
   const todayFormatted = `${day}/${month}/${year}`;
 
   // Generate the note with date
-  const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
+  //const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
+  const note = `I prescribe ${brand} (${product.ingredient}) for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
   document.getElementById('clinicalNote').value = note;
 
   //  Generate the note (old one but working - no date)
