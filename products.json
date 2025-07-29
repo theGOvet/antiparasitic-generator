@@ -1,6 +1,14 @@
 {
 "dog": [
     {
+  "name": "Gh",
+  "ingredient": "Hh",
+  "form": "tablet",
+  "minWeight": 5,
+  "maxWeight": 25,
+  "dose": "6 spots"
+    }, 
+    {
       "name": "Advocate",
       "ingredient": "imidacloprid + moxidectin",
       "form": "spot-on",
