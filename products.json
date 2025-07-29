@@ -1,4 +1,17 @@
 {
+  {
+  "name": "Tested",
+  "ingredient": "Moxudectin 5mg what",
+  "form": "chew",
+  "minWeight": 4.5,
+  "maxWeight": 10,
+  "dose": "2 clicks",
+  "animals": [
+    "dog",
+    "cat"
+    ]
+   }
+
   "dog": [
     {
       "name": "Advocate",
