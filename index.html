@@ -155,7 +155,7 @@ function generateNote() {
   const todayFormatted = `${day}/${month}/${year}`;
 
   // Generate the note using product.form instead of separate form field
-  const note = `I prescribe ${brand} (${product.ingredient}) ${product.form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
+  const note = `I prescribe ${brand} (${product.ingredient}) ${product.form} for ${animal} (${weight} kg), ${product.dose} ${frequency} for the next 12 months, commencing today (${todayFormatted}).`;
   document.getElementById('clinicalNote').value = note;
 }
 
