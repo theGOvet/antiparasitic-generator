@@ -33,6 +33,14 @@
       "minWeight": 1,
       "maxWeight": 4,
       "dose": "1 pipette monthly"
+    }, 
+    {
+      "name": "Advocater",
+      "ingredient": "imidacloprid + moxidectin",
+      "form": "spot-oner",
+      "minWeight": 1,
+      "maxWeight": 44,
+      "dose": "1 pipette"
     }
   ]
 }
