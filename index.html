@@ -11,9 +11,10 @@
     </style>
 </head>
 <body>
+
     <h1>UK Vet Antiparasitic Prescription Generator</h1>
     <p>Do not use yet. This is a Beta Version</p>
-    <!-- <p>Generate POM-V clinical notes in seconds. Compliant with UK prescribing rules.</p> -->
+   <p>Generate POM-V clinical notes in seconds. Compliant with UK prescribing rules.</p>
     
     <form id="prescriptionForm">
         <label><strong>Animal:</strong></label><br>
@@ -57,7 +58,78 @@
     <h3>Clinical Note:</h3>
     <textarea id="clinicalNote" rows="5" readonly></textarea>
     <button onclick="copyNote()">Copy to Clipboard</button>
-    
+
+    <script>
+// --- 1. Load Product Data & Initialize ---
+let productsData = {};
+
+fetch('products.json')
+  .then(response => response.json())
+  .then(data => {
+    productsData = data;
+    console.log("Products loaded!");
+  })
+  .catch(error => console.error("Error loading products:", error));
+
+// --- 2. Update Brands Dropdown (Weight Filter) ---
+function updateBrands() {
+  const animal = document.querySelector('input[name="animal"]:checked')?.value;
+  const weight = parseFloat(document.getElementById('weight').value);
+  const brandSelect = document.getElementById('brand');
+
+  if (!animal || isNaN(weight)) {
+    // Reset if no valid input
+    brandSelect.innerHTML = '<option value="">-- Select Brand --</option>';
+    return;
+  }
+
+  // Filter products by weight
+  const eligibleProducts = productsData[animal]?.filter(
+    product => weight >= product.minWeight && weight <= product.maxWeight
+  ) || [];
+
+  // Update dropdown
+  brandSelect.innerHTML = '<option value="">-- Select Brand --</option>';
+  
+  if (eligibleProducts.length === 0) {
+    brandSelect.innerHTML = '<option value="">No products found for this weight</option>';
+  } else {
+    eligibleProducts.forEach(product => {
+      const option = document.createElement('option');
+      option.value = product.name;
+      option.textContent = `${product.name} (${product.ingredient}) - ${product.form}, ${product.dose}`;
+      brandSelect.appendChild(option);
+    });
+  }
+}
+
+// --- 3. Auto-Fill Form/Frequency ---
+function autoFillDetails() {
+  const animal = document.querySelector('input[name="animal"]:checked')?.value;
+  const brandName = document.getElementById('brand').value;
+  
+  if (!animal || !brandName) return;
+
+  const product = productsData[animal]?.find(p => p.name === brandName);
+  if (!product) return;
+
+  // Auto-set form and frequency
+  document.getElementById('form').value = product.form.split(',')[0].trim(); // e.g., "spot-on"
+  const frequency = product.dose.match(/(monthly|every \d+ months)/)?.[0]; // Extract frequency
+  if (frequency) document.getElementById('frequency').value = frequency;
+}
+
+// --- 4. Event Listeners ---
+document.getElementById('weight').addEventListener('input', updateBrands);
+document.querySelectorAll('input[name="animal"]').forEach(radio => {
+  radio.addEventListener('change', updateBrands);
+});
+document.getElementById('brand').addEventListener('change', autoFillDetails);
+
+    </script>
+        
+
+    <!--
     <script>
         // Update brand info when selected
         document.getElementById('brand').addEventListener('change', function() {
@@ -109,6 +181,7 @@
             alert("Copied to clipboard!");
         }
     </script>
+    -->
     
     <!-- Affiliate/CTA Section -->
     <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 15px;">
