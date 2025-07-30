@@ -63,7 +63,56 @@
   "minWeight": 60,
   "maxWeight": 69.9,
   "dose": "7 tablets"
+}, 
+{
+  "name": "Simparica Trio",
+  "ingredient": "30mg sarolaner, 0.06mg moxidectin, 12.5mg pyrantel",
+  "form": "chewable tablet",
+  "minWeight": 1.25,
+  "maxWeight": 2.5,
+  "dose": "1 tablet"
+},
+{
+  "name": "Simparica Trio",
+  "ingredient": "60mg sarolaner, 0.12mg moxidectin, 25mg pyrantel",
+  "form": "chewable tablet",
+  "minWeight": 2.6,
+  "maxWeight": 5.0,
+  "dose": "1 tablet"
+},
+{
+  "name": "Simparica Trio",
+  "ingredient": "120mg sarolaner, 0.24mg moxidectin, 50mg pyrantel",
+  "form": "chewable tablet",
+  "minWeight": 5.1,
+  "maxWeight": 10.0,
+  "dose": "1 tablet"
+},
+{
+  "name": "Simparica Trio",
+  "ingredient": "240mg sarolaner, 0.48mg moxidectin, 100mg pyrantel",
+  "form": "chewable tablet",
+  "minWeight": 10.1,
+  "maxWeight": 20.0,
+  "dose": "1 tablet"
+},
+{
+  "name": "Simparica Trio",
+  "ingredient": "480mg sarolaner, 0.96mg moxidectin, 200mg pyrantel",
+  "form": "chewable tablet",
+  "minWeight": 20.1,
+  "maxWeight": 40.0,
+  "dose": "1 tablet"
+},
+{
+  "name": "Simparica Trio",
+  "ingredient": "720mg sarolaner, 1.44mg moxidectin, 300mg pyrantel",
+  "form": "chewable tablet",
+  "minWeight": 40.1,
+  "maxWeight": 60.0,
+  "dose": "1 tablet"
 }
+    
     
   ],
   "cat": [
