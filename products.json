@@ -116,7 +116,7 @@
       "name": "Advocate",
       "ingredient": "40mg imidacloprid + 10mg moxidectin",
       "form": "spot-on",
-      "minWeight": 0.1,  // Minimum weight for dogs
+      "minWeight": 0.1,
       "maxWeight": 4.0,
       "dose": "1 pippette (0.4ml)"
     },
@@ -182,7 +182,7 @@
       "name": "Advocate",
       "ingredient": "40mg imidacloprid + 4mg moxidectin",
       "form": "spot-on",
-      "minWeight": 0.5,  // Minimum practical weight for treatment
+      "minWeight": 0.5,
       "maxWeight": 4.0,
       "dose": "1 pippette (0.4ml)"
     },
