@@ -111,7 +111,39 @@
   "minWeight": 40.1,
   "maxWeight": 60.0,
   "dose": "1 tablet"
-}
+},
+    {
+      "name": "Advocate",
+      "ingredient": "40mg imidacloprid + 10mg moxidectin",
+      "form": "spot-on",
+      "minWeight": 0.1,  // Minimum weight for dogs
+      "maxWeight": 4.0,
+      "dose": "Small Dogs (0.4ml)"
+    },
+    {
+      "name": "Advocate",
+      "ingredient": "100mg imidacloprid + 25mg moxidectin",
+      "form": "spot-on",
+      "minWeight": 4.1,
+      "maxWeight": 10.0,
+      "dose": "Medium Dogs (1.0ml)"
+    },
+    {
+      "name": "Advocate",
+      "ingredient": "250mg imidacloprid + 62.5mg moxidectin",
+      "form": "spot-on",
+      "minWeight": 10.1,
+      "maxWeight": 25.0,
+      "dose": "Large Dogs (2.5ml)"
+    },
+    {
+      "name": "Advocate",
+      "ingredient": "400mg imidacloprid + 100mg moxidectin",
+      "form": "spot-on",
+      "minWeight": 25.1,
+      "maxWeight": 40.0,
+      "dose": "Extra-Large Dogs (4.0ml)"
+    }
     
     
   ],
@@ -147,6 +179,22 @@
       "minWeight": 5.1,
       "maxWeight": 8.0,
       "dose": "Large Cats (1.12ml)"
+    },
+          {
+      "name": "Advocate",
+      "ingredient": "40mg imidacloprid + 4mg moxidectin",
+      "form": "spot-on",
+      "minWeight": 0.5,  // Minimum practical weight for treatment
+      "maxWeight": 4.0,
+      "dose": "Small Cats (0.4ml)"
+    },
+    {
+      "name": "Advocate",
+      "ingredient": "80mg imidacloprid + 8mg moxidectin",
+      "form": "spot-on",
+      "minWeight": 4.1,
+      "maxWeight": 8.0,
+      "dose": "Large Cats (0.8ml)"
     }
   ]
 }
