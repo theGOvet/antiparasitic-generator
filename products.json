@@ -123,6 +123,30 @@
   "minWeight": 2,
   "maxWeight": 6.9,
   "dose": "Half tablet"
-}
+    },
+    {
+      "name": "Profender",
+      "ingredient": "7.5mg emodepside + 30mg praziquantel",
+      "form": "spot-on",
+      "minWeight": 0.5,
+      "maxWeight": 2.5,
+      "dose": "Small Cats (0.35ml)"
+    },
+    {
+      "name": "Profender",
+      "ingredient": "15mg emodepside + 60mg praziquantel",
+      "form": "spot-on",
+      "minWeight": 2.6,
+      "maxWeight": 5.0,
+      "dose": "Medium Cats (0.70ml)"
+    },
+    {
+      "name": "Profender",
+      "ingredient": "24mg emodepside + 96mg praziquantel",
+      "form": "spot-on",
+      "minWeight": 5.1,
+      "maxWeight": 8.0,
+      "dose": "Large Cats (1.12ml)"
+    }
   ]
 }
