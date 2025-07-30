@@ -13,7 +13,7 @@
 <body>
 
     <h1>UK Vet Antiparasitic Prescription Generator</h1>
-    <p>Do not use yet. This is a Beta Version</p>
+    <p>This is a Beta Version - Use with care</p>
    <p>Generate POM-V clinical notes in seconds. Compliant with UK prescribing rules.</p>
     
     <form id="prescriptionForm">
@@ -44,9 +44,13 @@
     </form>
     
     <h3>Clinical Note:</h3>
+    <div style="margin-top: 20px; padding: 10px; background-color: #f8f9fa; border-left: 4px solid #ffc107; font-size: 0.9em;">
     <textarea id="clinicalNote" rows="5" readonly></textarea>
     <button onclick="copyNote()">Copy to Clipboard</button>
-
+<strong>Important Notice (Beta Version):</strong> 
+  <p>This tool is provided free of charge for your convenience. While we strive for accuracy, please double-check all generated prescriptions against current guidelines and product specifications.</p>
+  <p>Neither the developer nor this website assumes liability for any errors or omissions in the generated content. Veterinary professionals remain responsible for all prescribing decisions.</p>
+    </div> 
 <script>
 // --- 1. Load Product Data & Initialize ---
 let productsData = {};
