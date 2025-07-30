@@ -29,7 +29,7 @@
   "ingredient": "50mg praziquantel",
   "form": "tablet",
   "minWeight": 20,
-  "maxWeight": 20.9,
+  "maxWeight": 29.9,
   "dose": "3 tablets"
 },
 {
@@ -37,7 +37,7 @@
   "ingredient": "50mg praziquantel",
   "form": "tablet",
   "minWeight": 30,
-  "maxWeight": 30.9,
+  "maxWeight": 39.9,
   "dose": "4 tablets"
 },
 {
@@ -45,7 +45,7 @@
   "ingredient": "50mg praziquantel",
   "form": "tablet",
   "minWeight": 40,
-  "maxWeight": 40.9,
+  "maxWeight": 49.9,
   "dose": "5 tablets"
 },
 {
@@ -53,7 +53,7 @@
   "ingredient": "50mg praziquantel",
   "form": "tablet",
   "minWeight": 50,
-  "maxWeight": 50.9,
+  "maxWeight": 59.9,
   "dose": "6 tablets"
 },
 {
@@ -61,7 +61,7 @@
   "ingredient": "50mg praziquantel",
   "form": "tablet",
   "minWeight": 60,
-  "maxWeight": 60.9,
+  "maxWeight": 69.9,
   "dose": "7 tablets"
 }
     
@@ -72,7 +72,7 @@
   "ingredient": "50mg praziquantel",
   "form": "tablet",
   "minWeight": 2,
-  "maxWeight": 6,
+  "maxWeight": 6.9,
   "dose": "Half tablet"
 }
   ]
