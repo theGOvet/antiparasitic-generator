@@ -118,7 +118,11 @@ function autoFillDetails() {
 }
 
 // --- 4. Event Listeners ---
-document.getElementById('weight').addEventListener('input', updateBrands);
+//document.getElementById('weight').addEventListener('input', updateBrands);
+document.getElementById('weight').addEventListener('input', function() {
+  updateBrands();
+  clearNote();
+});
 document.querySelectorAll('input[name="animal"]').forEach(radio => {
   radio.addEventListener('change', updateBrands);
 });
