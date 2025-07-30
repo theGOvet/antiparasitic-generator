@@ -53,6 +53,11 @@
   <p>Neither the developer nor this website assumes liability for any errors or omissions in the generated content. Veterinary professionals remain responsible for all prescribing decisions.</p>
     </div> 
 <script>
+    // - - - This will clear fields when input changes 
+function clearNote() {
+  document.getElementById('clinicalNote').value = "";
+}
+    
 // --- 1. Load Product Data & Initialize ---
 let productsData = {};
 
