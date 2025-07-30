@@ -143,7 +143,47 @@
       "minWeight": 25.1,
       "maxWeight": 40.0,
       "dose": "1 pippette  (4.0ml)"
-    }    
+    },
+        {
+      "name": "Bravecto",
+      "ingredient": "112.5mg fluralaner",
+      "form": "chewable tablet",
+      "minWeight": 2.0,
+      "maxWeight": 4.5,
+      "dose": "1 tablet (112.5mg)"
+    },
+    {
+      "name": "Bravecto",
+      "ingredient": "250mg fluralaner",
+      "form": "chewable tablet",
+      "minWeight": 4.5,
+      "maxWeight": 10.0,
+      "dose": "1 tablet (250mg)"
+    },
+    {
+      "name": "Bravecto",
+      "ingredient": "500mg fluralaner",
+      "form": "chewable tablet",
+      "minWeight": 10.0,
+      "maxWeight": 20.0,
+      "dose": "1 tablet (500mg)"
+    },
+    {
+      "name": "Bravecto",
+      "ingredient": "1000mg fluralaner",
+      "form": "chewable tablet",
+      "minWeight": 20.0,
+      "maxWeight": 40.0,
+      "dose": "1 tablet (1000mg)"
+    },
+    {
+      "name": "Bravecto",
+      "ingredient": "1400mg fluralaner",
+      "form": "chewable tablet",
+      "minWeight": 40.0,
+      "maxWeight": 56.0,
+      "dose": "1 tablet (1400mg)"
+    }
   ],
   "cat": [
     {
