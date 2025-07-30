@@ -66,18 +66,19 @@ fetch('products.json')
 // --- 2. Update Brands Dropdown (Weight Filter) ---
 function updateBrands() {
   const animal = document.querySelector('input[name="animal"]:checked')?.value;
-  const weight = parseFloat(document.getElementById('weight').value);
+  const rawWeight = document.getElementById('weight').value;
+  const weight = parseFloat(rawWeight).toFixed(1); // Round to 1 decimal
   const brandSelect = document.getElementById('brand');
 
   if (!animal || isNaN(weight)) {
-    // Reset if no valid input
     brandSelect.innerHTML = '<option value="">-- Select Brand --</option>';
     return;
   }
 
-  // Filter products by weight
+  // Filter using rounded weight
   const eligibleProducts = productsData[animal]?.filter(
-    product => weight >= product.minWeight && weight <= product.maxWeight
+    product => parseFloat(weight) >= product.minWeight && 
+              parseFloat(weight) <= product.maxWeight
   ) || [];
 
   // Update dropdown
