@@ -118,7 +118,7 @@
       "form": "spot-on",
       "minWeight": 0.1,  // Minimum weight for dogs
       "maxWeight": 4.0,
-      "dose": "Small Dogs (0.4ml)"
+      "dose": "1 pippette (0.4ml)"
     },
     {
       "name": "Advocate",
@@ -126,7 +126,7 @@
       "form": "spot-on",
       "minWeight": 4.1,
       "maxWeight": 10.0,
-      "dose": "Medium Dogs (1.0ml)"
+      "dose": "1 pippette (1.0ml)"
     },
     {
       "name": "Advocate",
@@ -134,7 +134,7 @@
       "form": "spot-on",
       "minWeight": 10.1,
       "maxWeight": 25.0,
-      "dose": "Large Dogs (2.5ml)"
+      "dose": "1 pippette  (2.5ml)"
     },
     {
       "name": "Advocate",
@@ -142,10 +142,8 @@
       "form": "spot-on",
       "minWeight": 25.1,
       "maxWeight": 40.0,
-      "dose": "Extra-Large Dogs (4.0ml)"
-    }
-    
-    
+      "dose": "1 pippette  (4.0ml)"
+    }    
   ],
   "cat": [
     {
@@ -162,7 +160,7 @@
       "form": "spot-on",
       "minWeight": 0.5,
       "maxWeight": 2.5,
-      "dose": "Small Cats (0.35ml)"
+      "dose": "1 pippette (0.35ml)"
     },
     {
       "name": "Profender",
@@ -170,7 +168,7 @@
       "form": "spot-on",
       "minWeight": 2.6,
       "maxWeight": 5.0,
-      "dose": "Medium Cats (0.70ml)"
+      "dose": "1 pippette (0.70ml)"
     },
     {
       "name": "Profender",
@@ -178,7 +176,7 @@
       "form": "spot-on",
       "minWeight": 5.1,
       "maxWeight": 8.0,
-      "dose": "Large Cats (1.12ml)"
+      "dose": "1 pippette (1.12ml)"
     },
           {
       "name": "Advocate",
@@ -186,7 +184,7 @@
       "form": "spot-on",
       "minWeight": 0.5,  // Minimum practical weight for treatment
       "maxWeight": 4.0,
-      "dose": "Small Cats (0.4ml)"
+      "dose": "1 pippette (0.4ml)"
     },
     {
       "name": "Advocate",
@@ -194,7 +192,7 @@
       "form": "spot-on",
       "minWeight": 4.1,
       "maxWeight": 8.0,
-      "dose": "Large Cats (0.8ml)"
+      "dose": "1 pippette (0.8ml)"
     }
   ]
 }
