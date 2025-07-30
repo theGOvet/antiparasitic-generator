@@ -133,7 +133,13 @@ document.querySelectorAll('input[name="animal"]').forEach(radio => {
   });
 });
     
-document.getElementById('brand').addEventListener('change', autoFillDetails);
+//document.getElementById('brand').addEventListener('change', autoFillDetails);
+document.getElementById('brand').addEventListener('change', function() {
+  autoFillDetails();
+  clearNote();
+});
+
+//document.getElementById('frequency').addEventListener('change', clearNote);
 
 // --- 5. Generate the Final Clinical Note ---
 function generateNote() {
