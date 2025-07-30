@@ -123,9 +123,16 @@ document.getElementById('weight').addEventListener('input', function() {
   updateBrands();
   clearNote();
 });
+//document.querySelectorAll('input[name="animal"]').forEach(radio => {
+ // radio.addEventListener('change', updateBrands);
+//});
 document.querySelectorAll('input[name="animal"]').forEach(radio => {
-  radio.addEventListener('change', updateBrands);
+    radio.addEventListener('change', function() {
+    updateBrands();
+    clearNote();
+  });
 });
+    
 document.getElementById('brand').addEventListener('change', autoFillDetails);
 
 // --- 5. Generate the Final Clinical Note ---
