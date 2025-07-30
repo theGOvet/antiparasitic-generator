@@ -73,7 +73,8 @@ fetch('products.json')
 function updateBrands() {
   const animal = document.querySelector('input[name="animal"]:checked')?.value;
   const rawWeight = document.getElementById('weight').value;
-  const weight = parseFloat(rawWeight).toFixed(1); // Round to 1 decimal
+  const weight = Math.round(parseFloat(rawWeight) * 10) / 10; // Returns a number rounded to 1 decimal
+  //const weight = parseFloat(rawWeight).toFixed(1); // Round to 1 decimal
   const brandSelect = document.getElementById('brand');
 
   if (!animal || isNaN(weight)) {
@@ -83,8 +84,9 @@ function updateBrands() {
 
   // Filter using rounded weight
   const eligibleProducts = productsData[animal]?.filter(
-    product => parseFloat(weight) >= product.minWeight && 
-              parseFloat(weight) <= product.maxWeight
+      product => weight >= product.minWeight && weight <= product.maxWeight
+   // product => parseFloat(weight) >= product.minWeight && 
+   //           parseFloat(weight) <= product.maxWeight
   ) || [];
 
   // Update dropdown
