@@ -120,20 +120,25 @@ document.getElementById('brand').addEventListener('change', autoFillDetails);
 // --- 5. Generate the Final Clinical Note ---
 function generateNote() {
   const animal = document.querySelector('input[name="animal"]:checked')?.value;
-  const weight = document.getElementById('weight').value;
+  const weight = parseFloat(document.getElementById('weight').value);
   const brand = document.getElementById('brand').value;
   const frequency = document.getElementById('frequency').value;
 
   // Validate inputs
-  if (!animal || !weight || !brand || !frequency) {
+  if (!animal || isNaN(weight) || !brand || !frequency) {
     alert("Please fill all fields!");
     return;
   }
 
-  // Find the selected product
-  const product = productsData[animal]?.find(p => p.name === brand);
+  // Find the correct product based on BOTH name AND weight range
+  const product = productsData[animal]?.find(p => 
+    p.name === brand && 
+    weight >= p.minWeight && 
+    weight <= p.maxWeight
+  );
+
   if (!product) {
-    alert("Error: Product not found. Please reselect.");
+    alert("Error: No matching product found for this weight. Please reselect.");
     return;
   }
 
@@ -144,11 +149,12 @@ function generateNote() {
   const year = today.getFullYear();
   const todayFormatted = `${day}/${month}/${year}`;
 
-  // Generate the note 
+  // Generate the note
+  const note = `Commencing today (${todayFormatted}) and for the next 12 months, I authorise the repeat prescription of ${brand} (${product.ingredient}) ${product.form} for ${animal} (${weight} kg), ${product.dose} ${frequency}.`;
+  document.getElementById('clinicalNote').value = note;
+    }
+    
 
-const note = `Commencing today (${todayFormatted}) and for the next 12 months, I authorise the repeat prescription of ${brand} (${product.ingredient}) ${product.form} for ${animal} (${weight} kg), ${product.dose} ${frequency}.`;
-    document.getElementById('clinicalNote').value = note;
-}
 
 // --- 6. Copy to Clipboard ---
 function copyNote() {
