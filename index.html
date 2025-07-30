@@ -35,17 +35,7 @@
             <option value="Milbemax">Milbemax (milbemycin oxime + praziquantel)</option>
         </select><br>
         <div class="brand-info" id="brandInfo"></div><br>
-      <!-- Form is redundant as part of the product 
-        <label for="form"><strong>Form:</strong></label><br>
-        <select id="form" name="form" required>
-            <option value="">-- Select Form --</option>
-            <option value="spot-on">Spot-on</option>
-            <option value="tablet">Tablet</option>
-            <option value="chew">Chew</option>
-        </select><br><br>
-       -->
-
-
+      
         <label for="frequency"><strong>Frequency:</strong></label><br>
         <select id="frequency" name="frequency" required>
             <option value="">-- Select Frequency --</option>
@@ -154,9 +144,8 @@ function generateNote() {
   const year = today.getFullYear();
   const todayFormatted = `${day}/${month}/${year}`;
 
-  // Generate the note using product.form instead of separate form field
- // const note = `I prescribe ${brand} (${product.ingredient}) ${product.form} for ${animal} (${weight} kg), ${product.dose} ${frequency} for the next 12 months, commencing today (${todayFormatted}).`;
-  // In your generateNote() function, replace the note generation line with:
+  // Generate the note 
+
 const note = `Commencing today (${todayFormatted}) and for the next 12 months, I authorise the repeat prescription of ${brand} (${product.ingredient}) ${product.form} for ${animal} (${weight} kg), ${product.dose} ${frequency}.`;
     document.getElementById('clinicalNote').value = note;
 }
@@ -170,177 +159,7 @@ function copyNote() {
 }
 
 </script>
-  <!--
-    <script>
-// --- 1. Load Product Data & Initialize ---
-let productsData = {};
-
-fetch('products.json')
-  .then(response => response.json())
-  .then(data => {
-    productsData = data;
-    console.log("Products loaded!");
-  })
-  .catch(error => console.error("Error loading products:", error));
-
-// --- 2. Update Brands Dropdown (Weight Filter) ---
-function updateBrands() {
-  const animal = document.querySelector('input[name="animal"]:checked')?.value;
-  const weight = parseFloat(document.getElementById('weight').value);
-  const brandSelect = document.getElementById('brand');
-
-  if (!animal || isNaN(weight)) {
-    // Reset if no valid input
-    brandSelect.innerHTML = '<option value="">-- Select Brand --</option>';
-    return;
-  }
-
-  // Filter products by weight
-  const eligibleProducts = productsData[animal]?.filter(
-    product => weight >= product.minWeight && weight <= product.maxWeight
-  ) || [];
-
-  // Update dropdown
-  brandSelect.innerHTML = '<option value="">-- Select Brand --</option>';
   
-  if (eligibleProducts.length === 0) {
-    brandSelect.innerHTML = '<option value="">No products found for this weight</option>';
-  } else {
-    eligibleProducts.forEach(product => {
-      const option = document.createElement('option');
-      option.value = product.name;
-      option.textContent = `${product.name} (${product.ingredient}) - ${product.form}, ${product.dose}`;
-      brandSelect.appendChild(option);
-    });
-  }
-}
-
-// --- 3. Auto-Fill Form/Frequency ---
-function autoFillDetails() {
-  const animal = document.querySelector('input[name="animal"]:checked')?.value;
-  const brandName = document.getElementById('brand').value;
-  
-  if (!animal || !brandName) return;
-
-  const product = productsData[animal]?.find(p => p.name === brandName);
-  if (!product) return;
-
-  // Auto-set form and frequency
-  document.getElementById('form').value = product.form.split(',')[0].trim(); // e.g., "spot-on"
-  const frequency = product.dose.match(/(monthly|every \d+ months)/)?.[0]; // Extract frequency
-  if (frequency) document.getElementById('frequency').value = frequency;
-}
-
-// --- 4. Event Listeners ---
-document.getElementById('weight').addEventListener('input', updateBrands);
-document.querySelectorAll('input[name="animal"]').forEach(radio => {
-  radio.addEventListener('change', updateBrands);
-});
-document.getElementById('brand').addEventListener('change', autoFillDetails);
-
-        // --- 5. Generate the Final Clinical Note ---
-function generateNote() {
-  const animal = document.querySelector('input[name="animal"]:checked')?.value;
-  const weight = document.getElementById('weight').value;
-  const brand = document.getElementById('brand').value;
-  const form = document.getElementById('form').value;
-  const frequency = document.getElementById('frequency').value;
-
-  // Validate inputs
-  if (!animal || !weight || !brand || !form || !frequency) {
-    alert("Please fill all fields!");
-    return;
-  }
-
-  // Find the selected product
-  const product = productsData[animal]?.find(p => p.name === brand);
-  if (!product) {
-    alert("Error: Product not found. Please reselect.");
-    return;
-  }
-
-      // Get today's date in dd/mm/yyyy format
-  const today = new Date();
-  const day = String(today.getDate()).padStart(2, '0');
-  const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
-  const year = today.getFullYear();
-  const todayFormatted = `${day}/${month}/${year}`;
-
-  // Generate the note with date
-  //const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
-  // not working const note = `I prescribe ${brand} (${product.ingredient}) for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
-  // In generateNote() - remove form variable and modify note:
-     const note = `I prescribe ${brand} (${product.ingredient}) ${product.form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months, commencing today (${todayFormatted}).`;
-     document.getElementById('clinicalNote').value = note;
-
-  //  Generate the note (old one but working - no date)
-  //  const note = `I prescribe ${brand} (${product.ingredient}) ${form} for ${animal} (${weight} kg), ${product.dose} for the next 12 months.`;
-  //  document.getElementById('clinicalNote').value = note;
-}
-
-// --- 6. Copy to Clipboard ---
-function copyNote() {
-  const note = document.getElementById('clinicalNote');
-  note.select();
-  document.execCommand('copy');
-  alert("Copied to clipboard!");
-}
-    </script>
-        
-
-    <!--
-    <script>
-        // Update brand info when selected
-        document.getElementById('brand').addEventListener('change', function() {
-            const brandInfo = {
-                "Advocate": "For fleas, ticks, worms (imidacloprid + moxidectin).",
-                "Bravecto": "Long-lasting flea & tick (fluralaner). Lasts 3 months.",
-                "NexGard": "Flea & tick chew (afoxolaner). Monthly use.",
-                "Milbemax": "Deworming tablet (milbemycin + praziquantel)."
-            };
-            document.getElementById('brandInfo').textContent = brandInfo[this.value] || "";
-        });
-        
-        function generateNote() {
-            const animal = document.querySelector('input[name="animal"]:checked')?.value;
-            const weight = document.getElementById('weight').value;
-            const brand = document.getElementById('brand').value;
-            const form = document.getElementById('form').value;
-            const frequency = document.getElementById('frequency').value;
-            
-            if (!animal || !weight || !brand || !form || !frequency) {
-                alert("Please fill all fields!");
-                return;
-            }
-            
-            // Brand-to-ingredient mapping
-            const ingredients = {
-                "Advocate": "imidacloprid + moxidectin",
-                "Bravecto": "fluralaner",
-                "NexGard": "afoxolaner",
-                "Milbemax": "milbemycin oxime + praziquantel"
-            };
-            
-            const ingredient = ingredients[brand];
-            let note = `I prescribe ${brand} (${ingredient}) ${form} for ${animal} (${weight} kg), `;
-            
-            if (form === "spot-on") {
-                note += `1 pipette ${frequency} for the next 12 months.`;
-            } else if (form === "tablet" || form === "chew") {
-                note += `1 ${form} ${frequency} for the next 12 months.`;
-            }
-            
-            document.getElementById('clinicalNote').value = note;
-        }
-        
-        function copyNote() {
-            const note = document.getElementById('clinicalNote');
-            note.select();
-            document.execCommand('copy');
-            alert("Copied to clipboard!");
-        }
-    </script>
-    -->
     
     <!-- Affiliate/CTA Section -->
     <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 15px;">
