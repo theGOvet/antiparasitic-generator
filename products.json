@@ -233,6 +233,62 @@
       "minWeight": 4.1,
       "maxWeight": 8.0,
       "dose": "1 pippette (0.8ml)"
+    },
+       {
+      "name": "Credelio",
+      "ingredient": "12mg lotilaner",
+      "form": "chewable tablet",
+      "minWeight": 0.5,
+      "maxWeight": 2.0,
+      "dose": "1 tablet (12mg)"
+    },
+    {
+      "name": "Credelio",
+      "ingredient": "48mg lotilaner",
+      "form": "chewable tablet",
+      "minWeight": 2.0,
+      "maxWeight": 8.0,
+      "dose": "1 tablet (48mg)"
+    },
+      {
+      "name": "Milprazon",
+      "ingredient": "4mg milbemycin oxime + 10mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 0.5,
+      "maxWeight": 1.0,
+      "dose": "½ tablet"
+    },
+    {
+      "name": "Milprazon",
+      "ingredient": "4mg milbemycin oxime + 10mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 1.0,
+      "maxWeight": 2.0,
+      "dose": "1 tablet"
+    },
+    {
+      "name": "Milprazon",
+      "ingredient": "16mg milbemycin oxime + 40mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 2.0,
+      "maxWeight": 4.0,
+      "dose": "½ tablet"
+    },
+    {
+      "name": "Milprazon",
+      "ingredient": "16mg milbemycin oxime + 40mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 4.0,
+      "maxWeight": 8.0,
+      "dose": "1 tablet"
+    },
+    {
+      "name": "Milprazon",
+      "ingredient": "16mg milbemycin oxime + 40mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 8.0,
+      "maxWeight": 12.0,
+      "dose": "1½ tablets"
     }
   ]
 }
