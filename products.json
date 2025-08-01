@@ -1,38 +1,6 @@
 {
 "dog": [
-    {
-      "name": "Advocate",
-      "ingredient": "40mg imidacloprid + 10mg moxidectin",
-      "form": "spot-on",
-      "minWeight": 0.1,
-      "maxWeight": 4.0,
-      "dose": "0.4ml pipette (40mg + 10mg)"
-    },
-    {
-      "name": "Advocate",
-      "ingredient": "100mg imidacloprid + 25mg moxidectin",
-      "form": "spot-on",
-      "minWeight": 4.1,
-      "maxWeight": 10.0,
-      "dose": "1.0ml pipette (100mg + 25mg)"
-    },
-    {
-      "name": "Advocate",
-      "ingredient": "250mg imidacloprid + 62.5mg moxidectin",
-      "form": "spot-on",
-      "minWeight": 10.1,
-      "maxWeight": 25.0,
-      "dose": "2.5ml pipette (250mg + 62.5mg)"
-    },
-    {
-      "name": "Advocate",
-      "ingredient": "400mg imidacloprid + 100mg moxidectin",
-      "form": "spot-on",
-      "minWeight": 25.1,
-      "maxWeight": 40.0,
-      "dose": "4.0ml pipette (400mg + 100mg)"
-    },
-    {
+{
   "name": "Droncit",
   "ingredient": "50mg praziquantel",
   "form": "tablet",
@@ -150,7 +118,7 @@
       "form": "spot-on",
       "minWeight": 0.1,
       "maxWeight": 4.0,
-      "dose": "1 pippette (0.4ml)"
+      "dose": "1 pipette (0.4ml)"
     },
     {
       "name": "Advocate",
@@ -158,7 +126,7 @@
       "form": "spot-on",
       "minWeight": 4.1,
       "maxWeight": 10.0,
-      "dose": "1 pippette (1.0ml)"
+      "dose": "1 pipette (1.0ml)"
     },
     {
       "name": "Advocate",
@@ -166,7 +134,7 @@
       "form": "spot-on",
       "minWeight": 10.1,
       "maxWeight": 25.0,
-      "dose": "1 pippette  (2.5ml)"
+      "dose": "1 pipette  (2.5ml)"
     },
     {
       "name": "Advocate",
@@ -174,7 +142,7 @@
       "form": "spot-on",
       "minWeight": 25.1,
       "maxWeight": 40.0,
-      "dose": "1 pippette  (4.0ml)"
+      "dose": "1 pipette  (4.0ml)"
     },
         {
       "name": "Bravecto",
