@@ -126,7 +126,7 @@
       "form": "spot-on",
       "minWeight": 4.1,
       "maxWeight": 10.0,
-      "dose": "1 pipette (1.0ml)"
+      "dose": "1 pipette"
     },
     {
       "name": "Advocate",
@@ -134,7 +134,7 @@
       "form": "spot-on",
       "minWeight": 10.1,
       "maxWeight": 25.0,
-      "dose": "1 pipette  (2.5ml)"
+      "dose": "1 pipette"
     },
     {
       "name": "Advocate",
@@ -142,7 +142,7 @@
       "form": "spot-on",
       "minWeight": 25.1,
       "maxWeight": 40.0,
-      "dose": "1 pipette  (4.0ml)"
+      "dose": "1 pipette"
     },
         {
       "name": "Bravecto",
