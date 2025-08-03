@@ -146,6 +146,14 @@
     },
   {
       "name": "Advocate",
+      "ingredient": "440mg imidacloprid + 110mg moxidectin",
+      "form": "spot-on",
+      "minWeight": 40.1,
+      "maxWeight": 44.0,
+      "dose": "2 pipettes (4mls + 0.4ml)"
+    },
+  {
+      "name": "Advocate",
       "ingredient": "500mg imidacloprid + 125mg moxidectin",
       "form": "spot-on",
       "minWeight": 44.1,
