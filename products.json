@@ -150,7 +150,15 @@
       "form": "spot-on",
       "minWeight": 44.1,
       "maxWeight": 50.0,
-      "dose": "2 pipette (4mls + 1ml)"
+      "dose": "2 pipettes (4mls + 1ml)"
+    },
+  {
+      "name": "Advocate",
+      "ingredient": "650mg imidacloprid + 162.5mg moxidectin",
+      "form": "spot-on",
+      "minWeight": 50.1,
+      "maxWeight": 75.0,
+      "dose": "2 pipettes (4mls + 2.5ml)"
     },
         {
       "name": "Bravecto",
