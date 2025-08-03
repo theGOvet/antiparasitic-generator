@@ -144,6 +144,14 @@
       "maxWeight": 40.0,
       "dose": "1 pipette"
     },
+  {
+      "name": "Advocate",
+      "ingredient": "500mg imidacloprid + 125mg moxidectin",
+      "form": "spot-on",
+      "minWeight": 44.1,
+      "maxWeight": 50.0,
+      "dose": "2 pipettes"
+    },
         {
       "name": "Bravecto",
       "ingredient": "112.5mg fluralaner",
