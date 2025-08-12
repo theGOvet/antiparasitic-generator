@@ -1,5 +1,45 @@
 {
 "dog": [
+    {
+      "name": "Milprazon Small Dogs and Puppies",
+      "ingredient": "2.5mg milbemycin oxime + 25mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 0.5,
+      "maxWeight": 1.0,
+      "dose": "½ tablet"
+    },
+    {
+      "name": "Milprazon Small Dogs and Puppies",
+      "ingredient": "2.5mg milbemycin oxime + 25mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 1.1,
+      "maxWeight": 5.0,
+      "dose": "1 tablet"
+    },
+    {
+      "name": "Milprazon",
+      "ingredient": "12.5mg milbemycin oxime + 125mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 5.0,
+      "maxWeight": 25.0,
+      "dose": "1 tablet"
+    },
+    {
+      "name": "Milprazon",
+      "ingredient": "12.5mg milbemycin oxime + 125mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 25.1,
+      "maxWeight": 50.0,
+      "dose": "2 tablets"
+    },
+    {
+      "name": "Milprazon",
+      "ingredient": "12.5mg milbemycin oxime + 125mg praziquantel",
+      "form": "chewable tablet",
+      "minWeight": 50.1,
+      "maxWeight": 75.0,
+      "dose": "3 tablets"
+    },
   {
     "name": "Bravecto Spot-On",
     "ingredient": "112.5mg fluralaner",
