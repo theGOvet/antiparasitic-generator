@@ -1,5 +1,53 @@
 {
 "dog": [
+  {
+    "name": "Bravecto Spot-On",
+    "ingredient": "112.5mg fluralaner",
+    "form": "spot-on",
+    "minWeight": 2.0,
+    "maxWeight": 4.5,
+    "dose": "1 pipette (112.5mg)"
+  },
+  {
+    "name": "Bravecto Spot-On",
+    "ingredient": "250mg fluralaner",
+    "form": "spot-on",
+    "minWeight": 4.51,
+    "maxWeight": 10.0,
+    "dose": "1 pipette (250mg)"
+  },
+  {
+    "name": "Bravecto Spot-On",
+    "ingredient": "500mg fluralaner",
+    "form": "spot-on",
+    "minWeight": 10.01,
+    "maxWeight": 20.0,
+    "dose": "1 pipette (500mg)"
+  },
+  {
+    "name": "Bravecto Spot-On",
+    "ingredient": "1000mg fluralaner",
+    "form": "spot-on",
+    "minWeight": 20.01,
+    "maxWeight": 40.0,
+    "dose": "1 pipette (1000mg)"
+  },
+  {
+    "name": "Bravecto Spot-On",
+    "ingredient": "1400mg fluralaner",
+    "form": "spot-on",
+    "minWeight": 40.01,
+    "maxWeight": 56.0,
+    "dose": "1 pipette (1400mg)"
+  },
+  {
+    "name": "Bravecto Spot-On",
+    "ingredient": "fluralaner",
+    "form": "spot-on",
+    "minWeight": 56.1,
+    "maxWeight": null,
+    "dose": "Use a combination of two pipettes that most closely matches the body weight"
+  },
 {
   "name": "Droncit",
   "ingredient": "50mg praziquantel",
